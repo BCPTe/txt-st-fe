@@ -1,0 +1,22 @@
+// @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+@font-face {
+	font-family: "NCS Rogueland";
+	src: local("NCS Rogueland"),
+		url("./fonts/NCS_Rogueland.ttf") format("truetype");
+	// font-weight: bold;
+}
+
+* {
+	box-sizing: border-box;
+	// font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+	font-family: "NCS Rogueland", Arial, Helvetica, sans-serif;
+}
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.App {
+	height: 100dvh;
+}

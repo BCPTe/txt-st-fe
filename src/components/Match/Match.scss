@@ -1,0 +1,54 @@
+.match-container {
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.match {
+	height: 30%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 5px;
+	border-radius: 40px;
+	background: #e0e0e0;
+	box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.info {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	border-radius: 40px;
+	box-shadow: 15px 0 10px -10px #bebebe;
+	
+	.when-info {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+}
+
+.motivational {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+	.match {
+		height: 50%;
+		flex-direction: column;
+	}
+	.info {
+		height: 50%;
+		box-shadow: 0 15px 10px -10px #bebebe;
+	}
+	.motivational {
+		height: 50%;
+	}
+}

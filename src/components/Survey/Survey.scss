@@ -1,0 +1,143 @@
+.survey-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.react-card-flip {
+	height: 100%;
+}
+
+.survey-form {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+	padding: 16px;
+	border-radius: 20px;
+	background: #e0e0e0;
+	box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+
+/* START OVERRIDE CALENDAR */
+
+.react-calendar__navigation__arrow {
+	width: 40px;
+	border-radius: 20px;
+}
+
+.react-calendar__navigation__label {
+	width: 40px;
+	border-radius: 20px;
+}
+
+.react-calendar__tile {
+	border-radius: 20px;
+}
+
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+	padding: 1.2em 0.5em;
+}
+
+.custom-calendar {
+	width: unset;
+	border-radius: 10px;
+	border: 0;
+	background-color: #ceceff;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+	background-color: #a4a4ff;
+}
+
+/* END OVERRIDE CALENDAR */
+
+.calendar-btns {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.calendar-btns .btn {
+	width: 40%;
+}
+
+.dates-in-db {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	gap: 10px;
+	padding: .5rem;
+	/* border: 3px solid white; */
+	border-radius: 5px;
+	box-shadow: 0 0 6px -2px black inset;
+}
+
+.date {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.date .btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 30px;	/* it could be 15 (half of its dimensions) but that's ok too */
+	width: 30px;
+	height: 30px;
+}
+
+.players-in-day {
+	width: 100%;
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.down-btns {
+	height: 10%;
+}
+
+
+.player {
+	width: 90%;
+	padding: 5px;
+
+	.name-surname-container,
+	.username-container {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	
+	.name-surname {
+		padding-left: 10px;
+	}
+}
+
+.react-calendar .used-dates {
+	background-color: lightseagreen;
+	color: white;
+}
+
+.react-calendar .full-dates {
+	background-color: greenyellow;
+	color: white
+}
+
+.mh-75 {
+	min-height: 75%;
+}

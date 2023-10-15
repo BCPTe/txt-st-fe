@@ -1,0 +1,63 @@
+:root {
+	--white: #fff;
+	--red: #ff0000;
+	--green: #00ff00;
+	--blue: #0000ff;
+}
+
+.pbtn {
+	height: 100%;
+	border: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pbtn-white {
+	/* background-color: #fff; */
+
+	background: rgb(255, 255, 255);
+	background: linear-gradient(
+		-45deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(var(--bs-light-rgb)) 50%,
+		rgba(255, 255, 255, 1) 100%
+	);
+	background-position: -200px;
+	background-repeat: no-repeat;
+	transition: 0.5s;
+
+	color: #000;
+}
+.pbtn-white:hover {
+	/* background-color: #dadada; */
+
+	background: linear-gradient(
+		-45deg,
+		rgba(var(--bs-light-rgb)) 0%,
+		rgba(255, 255, 255, 1) 50%,
+		rgba(var(--bs-light-rgb)) 100%
+	);
+	background-position: 0;
+	background-repeat: no-repeat;
+}
+.pbtn-white:active {
+	background: #dadada;
+}
+
+.pbtn-blue {
+	background-color: #0000ff;
+	color: #fff;
+}
+.pbtn-red {
+	background-color: #ff0000;
+	color: #fff;
+}
+.pbtn-green {
+	background-color: #00ff00;
+	color: #000;
+}
+.pbtn-yellow {
+	background-color: #ffff00;
+	color: #000;
+}

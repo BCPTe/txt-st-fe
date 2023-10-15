@@ -1,0 +1,39 @@
+.header {
+	width: 100%;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: white;
+}
+
+.header > * {
+	height: 100%;
+}
+
+.header .label {
+	/* display: none; */
+	margin-left: .5rem;
+}
+
+.links-container {
+	display: flex;
+	justify-content: start;
+}
+.logo-container {
+	display: flex;
+	justify-content: center;
+}
+.account-container {
+	display: flex;
+	justify-content: end;
+}
+
+.logo {
+	height: 70px;
+	width: auto;
+}
+
+.pbtn-header {
+	padding-inline: 2rem;
+}
