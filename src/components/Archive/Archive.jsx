@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import "./Archive.scss"
 
 const Archive = () => {
-  return (
-	<div>Archive</div>
-  )
-}
+	return (
+		<div className="archive-container fw-bold">
+			Page under construction
+		</div>
+	)
+};
 
-export default Archive
+export default Archive;

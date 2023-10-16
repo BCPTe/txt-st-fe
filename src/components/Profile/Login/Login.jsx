@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { Row, Form, Col, Button, FloatingLabel } from 'react-bootstrap'
 import '../Profile.scss'
-import api from '../../../API/axiosConfig'
 import { useAuth } from '../../../Contexts/AuthContext'
 
 const Login = () => {
 	const { login } = useAuth()
-
+	const [loginError, setLoginError] = useState(false)
 	const [usernameOrEmail, setUsernameOrEmail] = useState("")
 	const [password, setPassword] = useState("")
 
@@ -22,7 +21,7 @@ const Login = () => {
 			password: password
 		})
 		console.log("payload: ", payload)
-		login(payload)
+		login(payload, setLoginError, setPassword)
 	}
 
 	return (
@@ -31,12 +30,13 @@ const Login = () => {
 				<Form onSubmit={handleLogin} className="profile-form">
 					<h4>Login</h4>
 					<FloatingLabel className="usernameoremail-group" controlId="floatingUsernameOrMail" label="Username or Email">
-						<Form.Control type='text' placeholder="Username or Email" onChange={(e) => setUsernameOrEmail(e.target.value)} required />
+						<Form.Control value={usernameOrEmail} type='text' placeholder="Username or Email" onChange={(e) => setUsernameOrEmail(e.target.value)} required />
 					</FloatingLabel>
 					<FloatingLabel className="password-group" controlId="floatingPassword" label="Password">
-						<Form.Control type='password' placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
+						<Form.Control value={password} type='password' placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
 					</FloatingLabel>
 					<Button variant="secondary" type="submit">LOGIN</Button>
+					{loginError && <Form.Text className='text-danger'>Wrong credentials!</Form.Text>}
 					<Form.Text>or <a href='/register'>register</a> if you don't have an account yet</Form.Text>
 				</Form>
 			</Col>

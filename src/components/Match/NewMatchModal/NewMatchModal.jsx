@@ -10,6 +10,7 @@ const NewMatchModal = (props) => {
 	// for showing modal
 	const [show, setShow] = useState(false);
 	const [showPlayersModal, setShowPlayersModal] = useState(false);
+	const [error, setError] = useState(false)
 	// modal content (survey used or full)
 	const [surveyUsed, setSurveyUsed] = useState([]);
 	const [playersList, setPlayersList] = useState([]);
@@ -52,9 +53,11 @@ const NewMatchModal = (props) => {
 		var payload = null
 
 		if(surveyActive) {
+			// activate match
 			var [h,m] = matchInfo[index].hour.split(":")		// get hour and minute
 			if(!h || !m) {
 				console.error("PROBLEM WITH MATCH HOUR, INSERTED: ", matchInfo[index].hour)
+				setError(true)
 				return
 			}
 			var matchDatetime = new Date(surveyDate)
@@ -70,6 +73,7 @@ const NewMatchModal = (props) => {
 			}
 		}
 		else {
+			// deactivate match
 			payload = {
 				operation: "set-active",
 				surveyDate: surveyDate,
@@ -86,6 +90,8 @@ const NewMatchModal = (props) => {
 			});
 
 		console.log(payload);
+		updateActivatingStep(index, 0)
+		setError(false)
 	}
 
 	const getUsedSurveys = () => {
@@ -277,6 +283,7 @@ const NewMatchModal = (props) => {
 					}
 				</Modal.Body>
 				<Modal.Footer>
+					<span className="text-danger">{error ? "Check inserted details!" : ""}</span>
 					<Button variant="danger" onClick={() => setShow(false)}>
 						Close
 					</Button>

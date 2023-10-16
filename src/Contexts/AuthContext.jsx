@@ -35,7 +35,7 @@ export const AuthProvider = (props) => {
 		return cookies['auth']
 	}
 
-	const login = (payload) => {
+	const login = (payload, setError, setPassword) => {
 		api.post("/api/v1/users/login", payload)
 			.then(response => {
 				console.log("response: ", response)
@@ -54,8 +54,14 @@ export const AuthProvider = (props) => {
 						isAdmin: response.data.admin ? true : false
 					}
 					setCookie("auth", authObj)
-					console.log(cookies['auth'])
+					// console.log(cookies['auth'])
+					setError(false)
 				}
+			})
+			.catch(err => {
+				setError(true)
+				setPassword("")
+				console.log("ciao")
 			})
 	}
 
